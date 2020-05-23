@@ -7,7 +7,6 @@ const server = http.createServer((req, res) => {
   fs.readFile('./public/public.html', (err, data) => {
     if (err) {
       res.setHeader('Content-type', 'text/plain');
-
       // error 404!
       res.statusCode = 404;
       res.end(err);
