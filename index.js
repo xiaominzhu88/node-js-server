@@ -1,6 +1,5 @@
 const http = require('http');
 const config = require('./config'); 
-// 'import' the created file in 'public' dir
 const fs = require('fs');
 
 const server = http.createServer((req, res) => {
