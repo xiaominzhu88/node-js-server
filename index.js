@@ -1,5 +1,6 @@
 const http = require('http');
-const publicFile = require('./public/publicFile'); // 'import' the created file in 'public' dir
+const config = require('./config'); 
+// 'import' the created file in 'public' dir
 const fs = require('fs');
 
 const server = http.createServer((req, res) => {
@@ -25,8 +26,8 @@ const server = http.createServer((req, res) => {
 });
 
 //  show server console with run on localhost
-server.listen(publicFile.port, publicFile.hostname, () => {
+server.listen(config.port, config.hostname, () => {
   console.log(
-    `Server running at http://${publicFile.hostname}:${publicFile.port}/`,
+    `Server running at http://${config.hostname}:${config.port}/`,
   );
 });
