@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     } else {
       //set type of the content on localhost page with hostname and port, could also change
       //to text/html then it shows html -Header
-      res.setHeader('Content-type', 'text/html');
+      res.setHeader('Content-type', 'text/plain');
 
       // port 200 OK!
       res.statusCode = 200;
