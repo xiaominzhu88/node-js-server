@@ -1,5 +1,7 @@
 const serve = require('node-static');
 const file = new serve.Server('./public');
+const config = require('./config'); 
+
 require('http')
   .createServer(function (req, res) {
     req
@@ -8,4 +10,10 @@ require('http')
       })
       .resume();
   })
-  .listen(3000);
+  
+ .listen(config.port, config.hostname, () => {
+  console.log(
+    `Server running at http://${config.hostname}:${config.port}/`,
+  );
+});
+  //.listen(config.port);
